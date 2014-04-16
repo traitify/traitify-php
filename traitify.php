@@ -3,7 +3,7 @@ class Traitify{
 	public function create_assessment($deck_id = ""){
 		$curl = curl_init();
 
-		$url = $this->url . $this->version . "/assessments";
+		$url = $this->host . "/" . $this->version . "/assessments";
 
 		curl_setopt($curl, CURLOPT_POST, 1);
 
