@@ -42,7 +42,6 @@ class Traitify{
 		/**************************************
 		 * Currently on rolling release
 		 * Totem Style:
-		 * https://s3.amazonaws.com/traitify-cdn/js/results/totem/1.0.0.js
 		 **************************************/
 		array_push($script, '<script src="https://s3.amazonaws.com/traitify-cdn/js/results/prop/1.0.0.js"></script>');
 		array_push($script, "<div class='traitify'><br/></div>");
@@ -61,14 +60,14 @@ class Traitify{
 		}
 		$script = Array();
 
-		array_push($script, '<script src="https://s3.amazonaws.com/traitify-cdn/js/slide_deck/1.0.1.min.js"></script>');
 		/**************************************
 		 * Currently on rolling release
 		 * Totem Style:
-		 * https://s3.amazonaws.com/traitify-cdn/js/results/totem/1.0.0.js
 		 **************************************/
 		array_push($script, '<script src="https://s3.amazonaws.com/traitify-cdn/js/results/prop/1.0.0.js"></script>');
+
 		array_push($script, "<div class='traitify'><br/></div>");
+
 		array_push($script, "<script>");
 		array_push($script, "Traitify.setPublicKey('".$this->public_key."');");
 		array_push($script, "Traitify.setAssessmentId('".$assessment_id."');");
