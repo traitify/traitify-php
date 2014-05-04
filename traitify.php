@@ -38,7 +38,8 @@ class Traitify{
 		}
 		$script = Array();
 
-		array_push($script, '<script src="https://s3.amazonaws.com/traitify-cdn/js/slide_deck/1.0.1.min.js"></script>');
+		array_push($script, '<script src="https://s3.amazonaws.com/traitify-cdn/js/api/1.0.0.js"></script>');
+		array_push($script, '<script src="https://s3.amazonaws.com/traitify-cdn/js/slide_deck/1.0.0.js"></script>');
 		/**************************************
 		 * Currently on rolling release
 		 * Totem Style:
@@ -46,9 +47,10 @@ class Traitify{
 		array_push($script, '<script src="https://s3.amazonaws.com/traitify-cdn/js/results/prop/1.0.0.js"></script>');
 		array_push($script, "<div class='traitify'><br/></div>");
 		array_push($script, "<script>");
+		array_push($script, "Traitify.setHost('".$this->host."');");
+		array_push($script, "Traitify.setVersion('".$this->version."');");
 		array_push($script, "Traitify.setPublicKey('".$this->public_key."');");
-		array_push($script, "Traitify.setAssessmentId('".$assessment_id."');");
-		array_push($script, "Traitify.slideDeck('.traitify', function(){ this.resultsWidget('.traitify')});");
+		array_push($script, "Traitify.ui.slideDeck('".$assessment_id."','.traitify', function(){ Traitify.ui.resultsProp('".$assessment_id."', '.traitify')});");
 		array_push($script, "</script>");
 		echo "" . join("", $script) . "";
 		return join("", $script);
@@ -64,14 +66,16 @@ class Traitify{
 		 * Currently on rolling release
 		 * Totem Style:
 		 **************************************/
+		array_push($script, '<script src="https://s3.amazonaws.com/traitify-cdn/js/api/1.0.0.js"></script>');
 		array_push($script, '<script src="https://s3.amazonaws.com/traitify-cdn/js/results/prop/1.0.0.js"></script>');
 
 		array_push($script, "<div class='traitify'><br/></div>");
 
 		array_push($script, "<script>");
+		array_push($script, "Traitify.setHost('".$this->host."');");
+		array_push($script, "Traitify.setVersion('".$this->version."');");
 		array_push($script, "Traitify.setPublicKey('".$this->public_key."');");
-		array_push($script, "Traitify.setAssessmentId('".$assessment_id."');");
-		array_push($script, "Traitify.resultsWidget('.traitify');");
+		array_push($script, "Traitify.ui.resultsProp('".$assessment_id."', '.traitify');");
 		array_push($script, "</script>");
 		echo "" . join("", $script) . "";
 		return join("", $script);
