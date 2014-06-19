@@ -1,0 +1,24 @@
+{
+    "name":             "traitify/client",
+    "description":      "A library for consuming Traitify Api.",
+    "keywords":         ["traitify", "api", "client", "personality"],
+    "homepage":         "http://www.traitify.com",
+    "time":             "2014-06-17",
+    "license":          "MIT",
+    "authors": [
+        {
+            "name":         "Carson Wright",
+            "email":        "carsonnwright@gmail.com",
+            "homepage":     "https://www.traitify.com",
+            "role":         "Developer"
+        }
+    ],
+    "require-dev": {
+         "phpunit/phpunit": "4.3.*"
+    },
+    "autoload": {
+        "files": [
+            "./traitify.php"
+        ]
+    }
+}

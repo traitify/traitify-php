@@ -1,29 +1,32 @@
 traitify-php
 ============
 
+System Setup
+```
+require "traitify.php";
+$traitify = new Traitify();
+$traitify->setHost("api.traitify.com");
+$deck_id = "your deck id";
+$traitify->private_key("your private key");
+$traitify->set_version("v1");
+```
 
 To create Assessment
 ```
-require "traitify.php";
-$traitify = new Traitify();
-$traitify->host = "api.traitify.com";
-$traitify->deck_id = "your deck id";
-$traitify->public_key = "your public key";
-$traitify->private_key = "your private key";
-$traitify->version = "v1";
-echo($assessment = $traitify->create_assessment()->id);
+echo($assessment_id = $traitify->create_assessment()->id);
 ```
 
-
-To render Slide Deck
+Get Slides
 ```
-require "traitify.php";
-$traitify = new Traitify();
-$traitify->host = "api.traitify.com";
-$traitify->deck_id = "your deck id";
-$traitify->public_key = "your public key";
-$traitify->private_key = "your private key";
-$traitify->version = "v1";
-$assessment = $traitify->create_assessment()->id;
-$traitify->render_slide_deck($assessment);
+$slides = $traitify->get_slides($assessment_id);
+```
+
+Get Personality Types
+```
+$personality_types = $traitify->get_personality_types($assessment_id);
+```
+
+Get Personality Traits
+```
+$personality_traits = $traitify->get_personality_traits($assessment_id);
 ```
