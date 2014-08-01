@@ -2,17 +2,29 @@ traitify-php
 ============
 
 System Setup
+
+Install Composer
+[Get Composer](https://getcomposer.org/doc/00-intro.md#globally)
+
+Create composer.json file or add the below json to your composer file:
 ```
-require "traitify.php";
-$traitify = new Traitify();
-$traitify->setHost("api.traitify.com");
-$deck_id = "your deck id";
-$traitify->private_key("your private key");
+{
+  "require": {
+      "traitify/client": "dev-master"
+  }
+}
+```
+
+```
+$traitify = new \Traitify\Client();
+$traitify->set_host("api.traitify.com");
+$traitify->set_private_key("your private key");
 $traitify->set_version("v1");
 ```
 
 To create Assessment
 ```
+$deck_id = "your deck id";
 echo($assessment_id = $traitify->create_assessment()->id);
 ```
 

@@ -1,7 +1,6 @@
-
 <?php 
 namespace Traitify;
-class Traitify{
+class Client{
 	public function set_host($host){
 		$this->host = $host;
 	}
