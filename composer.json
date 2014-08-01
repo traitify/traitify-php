@@ -17,8 +17,6 @@
          "phpunit/phpunit": "4.3.*"
     },
     "autoload": {
-        "files": [
-            "./traitify.php"
-        ]
+        "psr-0": { "Traitify": "./src" }
     }
 }

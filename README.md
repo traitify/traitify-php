@@ -29,4 +29,4 @@ $personality_types = $traitify->get_personality_types($assessment_id);
 Get Personality Traits
 ```
 $personality_traits = $traitify->get_personality_traits($assessment_id);
-```
+
