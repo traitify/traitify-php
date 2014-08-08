@@ -13,7 +13,7 @@ class Client{
 	public function request($method, $path, $params){
 		$curl = curl_init();
 
-		$url = $this->host . "/" . $this->version . $path;
+		$url = "https://" . $this->host . "/" . $this->version . $path;
 
 		if($method == "post"){
 			curl_setopt($curl, CURLOPT_POST, 1);
