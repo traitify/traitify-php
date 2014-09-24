@@ -1,8 +1,27 @@
 {
   "name": "Traitify/Client",
   "description": "Traitify Api Client",
+  "homepage": "http://www.traitify.com",
+  "keywords": ["traitify", "api", "client", "personality"],
   "require": {
     "php": ">=5.3.0",
     "guzzlehttp/guzzle": "4.*"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name":     "Carson Wright",
+      "email":    "carsonnwright@gmail.com",
+      "homepage": "https://www.traitify.com",
+      "role":     "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Traitify\\": "src/"
+    }
   }
 }
+
+
+
