@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Traitify-php by traitify</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Traitify-php</h1>
+        <p></p>
+
+        <p class="view"><a href="https://github.com/traitify/traitify-php">View the Project on GitHub <small>traitify/traitify-php</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/traitify/traitify-php/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/traitify/traitify-php/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/traitify/traitify-php">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="traitify-api-php-library" class="anchor" href="#traitify-api-php-library"><span class="octicon octicon-link"></span></a>Traitify Api PHP Library</h1>
+
+<p>To Install Use Composer:
+<a href="https://getcomposer.org/doc/00-intro.md#globally">https://getcomposer.org/doc/00-intro.md#globally</a></p>
+
+<h3>
+<a name="this-library-is-best-used-with-traitify-js" class="anchor" href="#this-library-is-best-used-with-traitify-js"><span class="octicon octicon-link"></span></a>This library is best used with Traitify JS</h3>
+
+<p><a href="http://traitify.github.io/traitify-js/">http://traitify.github.io/traitify-js/</a></p>
+
+<h3>
+<a name="private-key-required" class="anchor" href="#private-key-required"><span class="octicon octicon-link"></span></a>Private Key Required</h3>
+
+<p>For instructions on obtaining a public key visit:
+<a href="https://developer.traitify.com">https://developer.traitify.com</a></p>
+
+<h3>
+<a name="using-the-traitify-php-client-library" class="anchor" href="#using-the-traitify-php-client-library"><span class="octicon octicon-link"></span></a>Using The Traitify PHP Client Library:</h3>
+
+<h4>
+<a name="create-an-instance-of-the-client" class="anchor" href="#create-an-instance-of-the-client"><span class="octicon octicon-link"></span></a>Create an instance of the Client</h4>
+
+<div class="highlight highlight-PHP"><pre><span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Traitify\Client</span><span class="p">([</span>
+  <span class="s1">'host'</span><span class="o">=&gt;</span><span class="s1">'api-sandbox.traitify.com'</span><span class="p">,</span> <span class="cm">/* Example Host */</span> 
+  <span class="s1">'version'</span><span class="o">=&gt;</span><span class="s1">'v1'</span><span class="p">,</span> <span class="cm">/* Example Version */</span>
+  <span class="s1">'privateKey'</span><span class="o">=&gt;</span><span class="s1">'34aeraw23-3a43a32-234a34as42'</span> <span class="cm">/* Example Private Key */</span>
+<span class="p">]);</span>
+<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">createAssessment</span><span class="p">(</span><span class="s2">"career-deck"</span><span class="p">);</span>
+</pre></div>
+
+<h4>
+<a name="get-slides" class="anchor" href="#get-slides"><span class="octicon octicon-link"></span></a>Get Slides</h4>
+
+<div class="highlight highlight-PHP"><pre><span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Traitify\Client</span><span class="p">([</span>
+  <span class="s1">'host'</span><span class="o">=&gt;</span><span class="s1">'api-sandbox.traitify.com'</span><span class="p">,</span> <span class="cm">/* Example Host */</span> 
+  <span class="s1">'version'</span><span class="o">=&gt;</span><span class="s1">'v1'</span><span class="p">,</span> <span class="cm">/* Example Version */</span>
+  <span class="s1">'privateKey'</span><span class="o">=&gt;</span><span class="s1">'34aeraw23-3a43a32-234a34as42'</span> <span class="cm">/* Example Private Key */</span>
+<span class="p">]);</span>
+<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getSlides</span><span class="p">(</span><span class="s1">'a45rasw3-45s3a32-234aas45'</span><span class="p">);</span> <span class="cm">/* Example Assessment Id */</span>
+</pre></div>
+
+<h3>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h3>
+
+<h4>
+<a name="building-testing-and-bundling" class="anchor" href="#building-testing-and-bundling"><span class="octicon octicon-link"></span></a>Building, Testing and Bundling:</h4>
+
+<p>Installing PHPUnit
+<a href="https://phpunit.de/manual/current/en/installation.html">https://phpunit.de/manual/current/en/installation.html</a></p>
+
+<pre lang="Shell"><code>$ composer install
+$ phpunit tests/traitify_client.ph
+</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/traitify">traitify</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
