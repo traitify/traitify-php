@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    API Documentation &raquo; \Traitify\Client
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/Traitify.html">Traitify</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public">
+        <a href="#method___construct" title="__construct :: Clients accept an array of constructor parameters.">
+            <span class="description">Clients accept an array of constructor parameters.</span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_createAssessment" title="createAssessment :: Create Assessment">
+            <span class="description">Create Assessment</span><pre>createAssessment</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_delete" title="delete :: Makes a Delete request to traitify api">
+            <span class="description">Makes a Delete request to traitify api</span><pre>delete</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_get" title="get :: Makes a Get request to traitify api">
+            <span class="description">Makes a Get request to traitify api</span><pre>get</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getSlides" title="getSlides :: Get Slides">
+            <span class="description">Get Slides</span><pre>getSlides</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_post" title="post :: Makes a Post request to traitify api">
+            <span class="description">Makes a Post request to traitify api</span><pre>post</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_put" title="put :: Makes a Put request to traitify api">
+            <span class="description">Makes a Put request to traitify api</span><pre>put</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_request" title="request :: Makes a request to traitify api">
+            <span class="description">Makes a request to traitify api</span><pre>request</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setHost" title="setHost :: Set&#039;s the host for the Client instance.">
+            <span class="description">Set&#039;s the host for the Client instance.</span><pre>setHost</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setPrivateKey" title="setPrivateKey :: Set&#039;s the private key for the Client instance.">
+            <span class="description">Set&#039;s the private key for the Client instance.</span><pre>setPrivateKey</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setVersion" title="setVersion :: Set&#039;s the private key for the Client instance.">
+            <span class="description">Set&#039;s the private key for the Client instance.</span><pre>setVersion</pre>
+        </a>
+    </li>
+
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>Client</h1>
+                <small style="display: block; text-align: right">
+                                                        </small>
+                <p class="short_description">Traitify Api client</p>
+                <div class="details">
+                    <div class="long_description">
+                        
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>Clients accept an array of constructor parameters.</h2>
+                            <pre>__construct(array $config = array()) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Here's an example of creating a client:</p>
+<pre><code>$client = new Client([
+    'host' =&gt; 'api.traitify.com',
+    'version' =&gt; 'v1',
+   'privateKey' =&gt; 'as8sdf8sd-sdf8asf8sdf-asdf8sdffsdfd'
+]);</code></pre></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$config</h4>
+                                                <code>array</code><p><p>Client configuration settings</p>
+<pre><code>- host: The host that you wish to query for example api.traitify.com, or api-sandbox.traitify.com
+- version: The version of the api you wish to query v1 for example
+- privateKey: The private key you wish to send to the traitify's api</code></pre></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_createAssessment"></a>
+                        <div class="element clickable method public  method_createAssessment" data-toggle="collapse" data-target=".method_createAssessment .collapse">
+                            <h2>Create Assessment</h2>
+                            <pre>createAssessment(string $deckId) : Array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Uses post to make a create assessment request to the Traitify Api</p></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$deckId</h4>
+                                                <code>string</code><p><p>defines what deck you want to send with the request</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>Array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_delete"></a>
+                        <div class="element clickable method public  method_delete" data-toggle="collapse" data-target=".method_delete .collapse">
+                            <h2>Makes a Delete request to traitify api</h2>
+                            <pre>delete(string $path, string $params = array()) : Array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Uses Guzzle to make any delete request to the Traitify Api</p></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$path</h4>
+                                                <code>string</code><p><p>defines what endpoint you want to request</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$params</h4>
+                                                <code>string</code><p><p>defines what endpoints you want to send with the request</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>Array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_get"></a>
+                        <div class="element clickable method public  method_get" data-toggle="collapse" data-target=".method_get .collapse">
+                            <h2>Makes a Get request to traitify api</h2>
+                            <pre>get(string $path, string $params = array()) : Array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Uses Guzzle to make any get request to the Traitify Api</p></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$path</h4>
+                                                <code>string</code><p><p>defines what endpoint you want to request</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$params</h4>
+                                                <code>string</code><p><p>defines what endpoints you want to send with the request</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>Array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getSlides"></a>
+                        <div class="element clickable method public  method_getSlides" data-toggle="collapse" data-target=".method_getSlides .collapse">
+                            <h2>Get Slides</h2>
+                            <pre>getSlides(string $assessmentId) : Array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Uses get to make a request to the Traitify Api</p></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$assessmentId</h4>
+                                                <code>string</code><p><p>defines what assessment id you want to get slides for</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>Array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_post"></a>
+                        <div class="element clickable method public  method_post" data-toggle="collapse" data-target=".method_post .collapse">
+                            <h2>Makes a Post request to traitify api</h2>
+                            <pre>post(string $path, string $params = array()) : Array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Uses Guzzle to make any post request to the Traitify Api</p></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$path</h4>
+                                                <code>string</code><p><p>defines what endpoint you want to request</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$params</h4>
+                                                <code>string</code><p><p>defines what endpoints you want to send with the request</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>Array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_put"></a>
+                        <div class="element clickable method public  method_put" data-toggle="collapse" data-target=".method_put .collapse">
+                            <h2>Makes a Put request to traitify api</h2>
+                            <pre>put(string $path, string $params = array()) : Array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Uses Guzzle to make any put request to the Traitify Api</p></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$path</h4>
+                                                <code>string</code><p><p>defines what endpoint you want to request</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$params</h4>
+                                                <code>string</code><p><p>defines what endpoints you want to send with the request</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>Array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_request"></a>
+                        <div class="element clickable method public  method_request" data-toggle="collapse" data-target=".method_request .collapse">
+                            <h2>Makes a request to traitify api</h2>
+                            <pre>request(string $verb, string $path, string $params = array()) : Array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Uses Guzzle to make any request to the Traitify Api</p></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$verb</h4>
+                                                <code>string</code><p><p>defines what type of http verb you want to request</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$path</h4>
+                                                <code>string</code><p><p>defines what endpoint you want to request</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$params</h4>
+                                                <code>string</code><p><p>defines what endpoints you want to send with the request</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>Array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setHost"></a>
+                        <div class="element clickable method public  method_setHost" data-toggle="collapse" data-target=".method_setHost .collapse">
+                            <h2>Set&#039;s the host for the Client instance.</h2>
+                            <pre>setHost(string $host) : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Set's the Client instance $host variable</p></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$host</h4>
+                                                <code>string</code><p><p>sets the $this['host'] variable</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setPrivateKey"></a>
+                        <div class="element clickable method public  method_setPrivateKey" data-toggle="collapse" data-target=".method_setPrivateKey .collapse">
+                            <h2>Set&#039;s the private key for the Client instance.</h2>
+                            <pre>setPrivateKey(string $key) : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Set's the Client instance $config variable</p></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>string</code><p><p>sets the $config['privateKey'] config variable</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setVersion"></a>
+                        <div class="element clickable method public  method_setVersion" data-toggle="collapse" data-target=".method_setVersion .collapse">
+                            <h2>Set&#039;s the private key for the Client instance.</h2>
+                            <pre>setVersion(string $version) : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Set's the Client instance $version variable</p></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$version</h4>
+                                                <code>string</code><p><p>sets the $this['version'] variable</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                    
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_publicKey"> </a>
+                            <div class="element clickable property  public property_publicKey" data-toggle="collapse" data-target=".property_publicKey .collapse">
+                                <h2>Holds the Traitify publicKey</h2>
+                                <pre>publicKey : </pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_host"> </a>
+                            <div class="element clickable property  public property_host" data-toggle="collapse" data-target=".property_host .collapse">
+                                <h2>Holds the Traitify host</h2>
+                                <pre>host : </pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_version"> </a>
+                            <div class="element clickable property  public property_version" data-toggle="collapse" data-target=".property_version .collapse">
+                                <h2>Holds the Traitify host</h2>
+                                <pre>version : </pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\Traitify\Client"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/Traitify.html">Traitify</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/Traitify.Client.html">Client</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on 
+Warning: date_default_timezone_get(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in phar:///bin/phpdoc/vendor/twig/twig/lib/Twig/Extension/Core.php on line 89
+Wed, 24 Sep 2014 22:12:08 +0000.<br/>
+    </footer>
+    </body>
+</html>

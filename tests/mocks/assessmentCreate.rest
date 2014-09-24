@@ -1,0 +1,11 @@
+HTTP/1.1 201 Created
+Content-Type: application/json
+Date: Wed, 24 Sep 2014 20:39:03 GMT
+Location: https://api-sandbox.traitify.com/v1/assessments/ca928402-d44b-4af6-b9f4-9d5ac2558c55
+Server: Apache
+Via: 1.1 api.traitify.com
+x-request-id: c1dbaa94-9ecf-4467-8dd1-21c40515760d
+Content-Length: 116
+Connection: keep-alive
+
+{"id":"assessmentId","deck_id":"deckId","completed_at":null,"created_at":0}

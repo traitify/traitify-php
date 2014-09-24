@@ -1,66 +1,209 @@
 <?php 
+/**
+ * Traitify Client.
+ * @author Carson Wright
+ * @author Carson Wright carsonnwright@gmail.com
+ */
 namespace Traitify;
-class Client{
-	public function set_host($host){
+
+require 'vendor/autoload.php';
+
+use GuzzleHttp\Client as GuzzleClient;
+
+/**
+ * Traitify Api client
+ */
+class Client {
+	/**
+	 * Holds the Traitify publicKey
+	 */
+	public $publicKey;
+
+	/**
+	 * Holds the Traitify host
+	 */
+	public $host;
+
+	/**
+	 * Holds the Traitify host
+	 */
+	public $version;
+
+
+	/**
+     * Clients accept an array of constructor parameters.
+     *
+     * Here's an example of creating a client:
+     *
+     *     $client = new Client([
+     *         'host' => 'api.traitify.com',
+     *         'version' => 'v1',
+     *		   'privateKey' => 'as8sdf8sd-sdf8asf8sdf-asdf8sdffsdfd'
+     *     ]);
+     *
+     * @param array $config Client configuration settings
+     *     - host: The host that you wish to query for example api.traitify.com, or api-sandbox.traitify.com
+     *     - version: The version of the api you wish to query v1 for example 
+     *     - privateKey: The private key you wish to send to the traitify's api
+     */
+	public function __construct(array $config = []){
+		$this->host = $config["host"];
+		$this->version = $config["version"];
+		$this->privateKey = $config["privateKey"];
+		$this->client = new GuzzleClient();
+
+		return $this;
+	}
+	/**
+	 * Set's the host for the Client instance.
+	 *
+	 * Set's the Client instance $host variable
+	 *
+	 * @param string $host sets the $this['host'] variable
+	 *
+	 * @return void
+	 */
+	public function setHost($host){
 		$this->host = $host;
 	}
-	public function set_private_key($private_key){
-		$this->private_key = $private_key;
-	}
-	public function set_version($version){
+	/**
+	 * Set's the private key for the Client instance.
+	 *
+	 * Set's the Client instance $version variable
+	 *
+	 * @param string $version sets the $this['version'] variable
+	 *
+	 * @return void
+	 */
+	public function setVersion($version){
 		$this->version = $version;
 	}
-	public function request($method, $path, $params){
-		$curl = curl_init();
 
-		$url = "https://" . $this->host . "/" . $this->version . $path;
+	/**
+	 * Set's the private key for the Client instance.
+	 *
+	 * Set's the Client instance $config variable
+	 *
+	 * @param string $key sets the $config['privateKey'] config variable
+	 *
+	 * @return void
+	 */
+	public function setPrivateKey($key){
+		$this->privateKey = $key;
+	}
 
-		if($method == "post"){
-			curl_setopt($curl, CURLOPT_POST, 1);
-			$params = json_encode($params);
-			if($params){
-	            curl_setopt($curl, CURLOPT_POSTFIELDS, $params);
-			}
-		}
-		
+	/**
+	 * Makes a request to traitify api 
+	 *
+	 * Uses Guzzle to make any request to the Traitify Api
+	 *
+	 * @param string $verb defines what type of http verb you want to request
+	 *
+	 * @param string $path defines what endpoint you want to request
+	 *
+	 * @param string $params defines what endpoints you want to send with the request
+	 *
+	 * @return Array
+	 */
+	public function request($verb, $path, array $params = []){
+		$options['body'] = json_encode($params);
+		$options['auth'] = [$this->privateKey, "x"];
+		$options['headers'] = [
+			'Accept'    	=> 'application/json',
+			'Content-Type'  => 'application/json'
+		];
 
-		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-		    'Accept: application/json',
-		    'Content-Type: application/json'
-	    ));
+		$request = $this->client->createRequest($verb, 'https://'.$this->host."/v1".$path, $options);
+		$response = $this->client->send($request);
+		return json_decode($response->getBody());
+	}
 
-    	// Optional Authentication:
-    	curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-    	curl_setopt($curl, CURLOPT_USERPWD, $this->private_key.":x");
-    	curl_setopt($curl, CURLOPT_URL, $url);
-    	curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+	/**
+	 * Makes a Get request to traitify api 
+	 *
+	 * Uses Guzzle to make any get request to the Traitify Api
+	 *
+	 * @param string $path defines what endpoint you want to request
+	 *
+	 * @param string $params defines what endpoints you want to send with the request
+	 *
+	 * @return Array
+	 */
+	public function get($path, array $params = []){
+		return $this->request("GET", $path, $params);
+	}
 
-    	return json_decode(curl_exec($curl));
+	/**
+	 * Makes a Put request to traitify api 
+	 *
+	 * Uses Guzzle to make any put request to the Traitify Api
+	 *
+	 * @param string $path defines what endpoint you want to request
+	 *
+	 * @param string $params defines what endpoints you want to send with the request
+	 *
+	 * @return Array
+	 */
+	public function put($path, array $params = []){
+		return $this->request("PUT", $path, $params);
 	}
-	public function post($path, $params){
-		return $this->request("post", $path, $data);
-	}
-	public function get($path, $params){
-		return $this->request("get", $path, $data);
-	}
-	public function create_assessment($deck_id){
-		if($deck_id){
-			$data = Array("deck_id"=>$deck_id);	
-		}else{
-			$data = Array("deck_id"=>$this->deck_id);
-		}
 
-		return $this->request("post", "/assessments", $data);
+
+	/**
+	 * Makes a Post request to traitify api 
+	 *
+	 * Uses Guzzle to make any post request to the Traitify Api
+	 *
+	 * @param string $path defines what endpoint you want to request
+	 *
+	 * @param string $params defines what endpoints you want to send with the request
+	 *
+	 * @return Array
+	 */
+	public function post($path, array $params = []){
+		return $this->request("POST", $path, $params);
 	}
-	public function get_slides($assessmentId){
-		return $this->get("/assessments/".$assessmentId."/slides", $data);
+
+
+	/**
+	 * Makes a Delete request to traitify api 
+	 *
+	 * Uses Guzzle to make any delete request to the Traitify Api
+	 *
+	 * @param string $path defines what endpoint you want to request
+	 *
+	 * @param string $params defines what endpoints you want to send with the request
+	 *
+	 * @return Array
+	 */
+	public function delete($path, array $params = []){
+		return $this->request("DELETE", $path, $params);
 	}
-	public function get_personality_types($assessmentId){
-		return $this->get("/assessments/".$assessmentId."/personality_types", $data);
+
+
+	/**
+	 * Create Assessment
+	 *
+	 * Uses post to make a create assessment request to the Traitify Api
+	 *
+	 * @param string $deckId defines what deck you want to send with the request
+	 *
+	 * @return Array
+	 */
+	public function createAssessment($deckId){
+		return $this->post('/assessments/', ["deck_id"=>$deckId]);
 	}
-	public function get_personality_traits($assessmentId){
-		return $this->get("/assessments/".$assessmentId."/personality_traits", $data);
+
+	/**
+	 * Get Slides
+	 *
+	 * Uses get to make a request to the Traitify Api
+	 *
+	 * @param string $assessmentId defines what assessment id you want to get slides for
+	 *
+	 * @return Array
+	 */
+	public function getSlides($assessmentId){
+		return $this->get('/assessments/'.$assessmentId.'/slides');
 	}
 }
-
-?>
