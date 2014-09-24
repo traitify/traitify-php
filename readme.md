@@ -38,5 +38,5 @@ Installing PHPUnit
 
 ```Shell
 $ composer install
-$ phpunit tests/traitify_client.ph
+$ phpunit tests/traitify_client.php
 ```
