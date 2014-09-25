@@ -70,6 +70,39 @@
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getSlides</span><span class="p">(</span><span class="s1">'a45rasw3-45s3a32-234aas45'</span><span class="p">);</span> <span class="cm">/* Example Assessment Id */</span>
 </pre></div>
 
+<h4>
+<a name="get-decks" class="anchor" href="#get-decks"><span class="octicon octicon-link"></span></a>Get Decks</h4>
+
+<div class="highlight highlight-PHP"><pre><span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Traitify\Client</span><span class="p">([</span>
+  <span class="s1">'host'</span><span class="o">=&gt;</span><span class="s1">'api-sandbox.traitify.com'</span><span class="p">,</span> <span class="cm">/* Example Host */</span> 
+  <span class="s1">'version'</span><span class="o">=&gt;</span><span class="s1">'v1'</span><span class="p">,</span> <span class="cm">/* Example Version */</span>
+  <span class="s1">'privateKey'</span><span class="o">=&gt;</span><span class="s1">'34aeraw23-3a43a32-234a34as42'</span> <span class="cm">/* Example Private Key */</span>
+<span class="p">]);</span>
+<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getDecks</span><span class="p">();</span>
+</pre></div>
+
+<h4>
+<a name="get-personality-types" class="anchor" href="#get-personality-types"><span class="octicon octicon-link"></span></a>Get Personality Types</h4>
+
+<div class="highlight highlight-PHP"><pre><span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Traitify\Client</span><span class="p">([</span>
+  <span class="s1">'host'</span><span class="o">=&gt;</span><span class="s1">'api-sandbox.traitify.com'</span><span class="p">,</span> <span class="cm">/* Example Host */</span> 
+  <span class="s1">'version'</span><span class="o">=&gt;</span><span class="s1">'v1'</span><span class="p">,</span> <span class="cm">/* Example Version */</span>
+  <span class="s1">'privateKey'</span><span class="o">=&gt;</span><span class="s1">'34aeraw23-3a43a32-234a34as42'</span> <span class="cm">/* Example Private Key */</span>
+<span class="p">]);</span>
+<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getPersonalityTypes</span><span class="p">(</span><span class="s1">'a45rasw3-45s3a32-234aas45'</span><span class="p">);</span> <span class="cm">/* Example Assessment Id */</span>
+</pre></div>
+
+<h4>
+<a name="get-personality-traits" class="anchor" href="#get-personality-traits"><span class="octicon octicon-link"></span></a>Get Personality Traits</h4>
+
+<div class="highlight highlight-PHP"><pre><span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Traitify\Client</span><span class="p">([</span>
+  <span class="s1">'host'</span><span class="o">=&gt;</span><span class="s1">'api-sandbox.traitify.com'</span><span class="p">,</span> <span class="cm">/* Example Host */</span> 
+  <span class="s1">'version'</span><span class="o">=&gt;</span><span class="s1">'v1'</span><span class="p">,</span> <span class="cm">/* Example Version */</span>
+  <span class="s1">'privateKey'</span><span class="o">=&gt;</span><span class="s1">'34aeraw23-3a43a32-234a34as42'</span> <span class="cm">/* Example Private Key */</span>
+<span class="p">]);</span>
+<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">getPersonalityTraits</span><span class="p">(</span><span class="s1">'a45rasw3-45s3a32-234aas45'</span><span class="p">);</span> <span class="cm">/* Example Assessment Id */</span>
+</pre></div>
+
 <h3>
 <a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h3>
 
