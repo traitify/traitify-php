@@ -7,4 +7,7 @@ class specHelper extends PHPUnit_Framework_TestCase{
 		return new traitifyMocker();
 	}
 }
+function puts($variable){
+	echo(var_dump($variable));
+}
 ?>

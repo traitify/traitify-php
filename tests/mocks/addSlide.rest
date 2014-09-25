@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Thu, 25 Sep 2014 18:43:20 GMT
+Server: Apache
+Via: 1.1 api.traitify.com
+x-request-id: 3f0877a4-f35e-4f6a-8bab-a170c3f5fcfe
+transfer-encoding: chunked
+Connection: keep-alive
+
+{"id":"8abe88d4-f835-4cdf-8418-a5c47198916b","position":13,"caption":null,"image_desktop":null,"image_desktop_retina":null,"image_phone_landscape":null,"image_phone_portrait":null,"response":true,"time_taken":1000,"completed_at":1411670600098,"created_at":1411670598952,"focus_x":null,"focus_y":null}

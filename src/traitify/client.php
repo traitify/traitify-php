@@ -195,6 +195,17 @@ class Client {
 	}
 
 	/**
+	 * Get Decks
+	 *
+	 * Uses get to make a request to the Traitify Api
+	 *
+	 * @return Array
+	 */
+	public function getDecks(){
+		return $this->get('/decks');
+	}
+
+	/**
 	 * Get Slides
 	 *
 	 * Uses get to make a request to the Traitify Api
@@ -205,5 +216,70 @@ class Client {
 	 */
 	public function getSlides($assessmentId){
 		return $this->get('/assessments/'.$assessmentId.'/slides');
+	}
+
+	/**
+	 * Add Slide
+	 *
+	 * Uses get to make a request to the Traitify Api
+	 *
+	 * @param string $assessmentId defines what assessment id you want to set a slide
+	 *
+	 * @param string $slideId defines what slide id you want to set on the assessment
+	 *
+	 * @param string $value defines what response value
+	 *
+	 * @param string $timeTaken defines how long the user took to choose
+	 *
+	 * @return Array
+	 */
+	public function addSlide($assessmentId, $slideId, $value, $timeTaken){
+		return $this->put('/assessments/'.$assessmentId.'/slides/'.$slideId, ["response"=>$value, "time_taken"=>$timeTaken]);
+	}
+
+	/**
+	 * Add Slides
+	 *
+	 * Uses get to make a request to the Traitify Api
+	 *
+	 * @param string $assessmentId defines what assessment id you want to get slides for
+	 *
+	 * @param string $slideValues defines what values should be sent for slides
+	 *
+	 * @return Array
+	 */
+	public function addSlides($assessmentId, array $slideValues){
+		return $this->put('/assessments/'.$assessmentId.'/slides', $slideValues);
+	}
+
+	/**
+	 * Get Personality Types
+	 *
+	 * Uses get to make a request to the Traitify Api
+	 *
+	 * @param string $assessmentId defines what assessment id you want to get personality types for
+	 * 
+	 * @param string $options is optional and can be used to define which image pack you get back
+	 *
+	 * @return Array
+	 */
+	public function getPersonalityTypes($assessmentId, $options = []){
+		if(!isset($options["image_pack"])){
+			$options["image_pack"] = "linear";
+		}
+		return $this->get('/assessments/'.$assessmentId.'/personality_types', $options);
+	}
+
+	/**
+	 * Get Personality Traits
+	 *
+	 * Uses get to make a request to the Traitify Api
+	 *
+	 * @param string $assessmentId defines what assessment id you want to get personality traits for
+	 *
+	 * @return Array
+	 */
+	public function getPersonalityTraits($assessmentId){
+		return $this->get('/assessments/'.$assessmentId.'/personality_traits/raw');
 	}
 }

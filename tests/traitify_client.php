@@ -65,4 +65,64 @@ class TraitifyClient extends specHelper{
 
     $this->assertEquals($assessment->id, "assessmentId");
   }
+
+  public function testGetDecks(){
+    $traitify = $this->mockedClient();
+
+    $traitify->mock("getDecks");
+
+    $decks = $traitify->client->getDecks();
+
+    $this->assertEquals($decks[0]->id, "career-deck");
+  }
+
+  public function testGetSlides(){
+    $traitify = $this->mockedClient();
+
+    $traitify->mock("getSlides");
+
+    $slides = $traitify->client->getSlides("assessmentId");
+
+    $this->assertEquals($slides[0]->id, "da9195e8-94b2-4e5f-b8df-f1dc80d3226d");
+  }
+
+  public function testAddSlides(){
+    $traitify = $this->mockedClient();
+
+    $traitify->mock("addSlides");
+
+    $slides = $traitify->client->addSlides("assessmentId", [["id"=>"assessmentId", "response"=>true, "response_time"=>0]]);
+
+    $this->assertEquals($slides[0]->id, "3d5a4f6a-86ae-46d8-9434-d5e8dd625eff");
+  }
+
+  public function testAddSlide(){
+    $traitify = $this->mockedClient();
+
+    $traitify->mock("addSlide");
+
+    $slide = $traitify->client->addSlide("assessmentId", "slideId", "value", "0");
+
+    $this->assertEquals($slide->id, "8abe88d4-f835-4cdf-8418-a5c47198916b");
+  }
+
+  public function testGetPersonalityTypes(){
+    $traitify = $this->mockedClient();
+
+    $traitify->mock("getPersonalityTypes");
+
+    $personalityTypes = $traitify->client->getPersonalityTypes("assessmentId");
+
+    $this->assertEquals($personalityTypes->personality_blend->personality_type_1->id, "55071620-bca6-4f15-b466-de8733a834a8");
+  }
+
+  public function testGetPersonalityTraits(){
+    $traitify = $this->mockedClient();
+
+    $traitify->mock("getPersonalityTraits");
+
+    $personalityTraits = $traitify->client->getPersonalityTraits("assessmentId");
+
+    $this->assertEquals($personalityTraits[0]->personality_trait->name, "Aggressive");
+  }
 }
