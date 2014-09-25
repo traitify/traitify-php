@@ -31,6 +31,36 @@ $client = new Traitify\Client([
 $client->getSlides('a45rasw3-45s3a32-234aas45'); /* Example Assessment Id */
 ```
 
+#### Get Decks
+```PHP
+$client = new Traitify\Client([
+  'host'=>'api-sandbox.traitify.com', /* Example Host */ 
+  'version'=>'v1', /* Example Version */
+  'privateKey'=>'34aeraw23-3a43a32-234a34as42' /* Example Private Key */
+]);
+$client->getDecks();
+```
+
+#### Get Personality Types
+```PHP
+$client = new Traitify\Client([
+  'host'=>'api-sandbox.traitify.com', /* Example Host */ 
+  'version'=>'v1', /* Example Version */
+  'privateKey'=>'34aeraw23-3a43a32-234a34as42' /* Example Private Key */
+]);
+$client->getPersonalityTypes('a45rasw3-45s3a32-234aas45'); /* Example Assessment Id */
+```
+
+#### Get Personality Traits
+```PHP
+$client = new Traitify\Client([
+  'host'=>'api-sandbox.traitify.com', /* Example Host */ 
+  'version'=>'v1', /* Example Version */
+  'privateKey'=>'34aeraw23-3a43a32-234a34as42' /* Example Private Key */
+]);
+$client->getPersonalityTraits('a45rasw3-45s3a32-234aas45'); /* Example Assessment Id */
+```
+
 ### Contributing 
 #### Building, Testing and Bundling:
 Installing PHPUnit
