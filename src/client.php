@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Traitify Client.
  * @author Carson Wright
@@ -25,7 +25,7 @@ class Client {
 	public $host;
 
 	/**
-	 * Holds the Traitify host
+	 * Holds the Traitify version
 	 */
 	public $version;
 
@@ -38,18 +38,18 @@ class Client {
      *     $client = new Client([
      *         'host' => 'api.traitify.com',
      *         'version' => 'v1',
-     *		   'privateKey' => 'as8sdf8sd-sdf8asf8sdf-asdf8sdffsdfd'
+     *		   'secretKey' => 'as8sdf8sd-sdf8asf8sdf-asdf8sdffsdfd'
      *     ]);
      *
      * @param array $config Client configuration settings
      *     - host: The host that you wish to query for example api.traitify.com, or api-sandbox.traitify.com
-     *     - version: The version of the api you wish to query v1 for example 
-     *     - privateKey: The private key you wish to send to the traitify's api
+     *     - version: The version of the api you wish to query v1 for example
+     *     - secretKey: The secret key you wish to send to the traitify's api
      */
 	public function __construct(array $config = []){
 		$this->host = $config["host"];
 		$this->version = $config["version"];
-		$this->privateKey = $config["privateKey"];
+		$this->secretKey = $config["secretKey"] | $config["privateKey"];
 		$this->client = new GuzzleClient();
 
 		return $this;
@@ -67,7 +67,7 @@ class Client {
 		$this->host = $host;
 	}
 	/**
-	 * Set's the private key for the Client instance.
+	 * Set's the secret key for the Client instance.
 	 *
 	 * Set's the Client instance $version variable
 	 *
@@ -80,20 +80,33 @@ class Client {
 	}
 
 	/**
-	 * Set's the private key for the Client instance.
+	 * DEPRECATED: Set's the secret key for the Client instance.
 	 *
 	 * Set's the Client instance $config variable
 	 *
-	 * @param string $key sets the $config['privateKey'] config variable
+	 * @param string $key sets the $config['secretKey'] config variable
 	 *
 	 * @return void
 	 */
+
 	public function setPrivateKey($key){
-		$this->privateKey = $key;
+		$this->secretKey = $key;
+	}
+	/**
+	 * Set's the secret key for the Client instance.
+	 *
+	 * Set's the Client instance $config variable
+	 *
+	 * @param string $key sets the $config['secretKey'] config variable
+	 *
+	 * @return void
+	 */
+	public function setSecretKey($key){
+		$this->secretKey = $key;
 	}
 
 	/**
-	 * Makes a request to traitify api 
+	 * Makes a request to traitify api
 	 *
 	 * Uses Guzzle to make any request to the Traitify Api
 	 *
@@ -107,7 +120,7 @@ class Client {
 	 */
 	public function request($verb, $path, array $params = []){
 		$options['body'] = json_encode($params);
-		$options['auth'] = [$this->privateKey, "x"];
+		$options['auth'] = [$this->secretKey, "x"];
 		$options['headers'] = [
 			'Accept'    	=> 'application/json',
 			'Content-Type'  => 'application/json'
@@ -119,7 +132,7 @@ class Client {
 	}
 
 	/**
-	 * Makes a Get request to traitify api 
+	 * Makes a Get request to traitify api
 	 *
 	 * Uses Guzzle to make any get request to the Traitify Api
 	 *
@@ -134,7 +147,7 @@ class Client {
 	}
 
 	/**
-	 * Makes a Put request to traitify api 
+	 * Makes a Put request to traitify api
 	 *
 	 * Uses Guzzle to make any put request to the Traitify Api
 	 *
@@ -150,7 +163,7 @@ class Client {
 
 
 	/**
-	 * Makes a Post request to traitify api 
+	 * Makes a Post request to traitify api
 	 *
 	 * Uses Guzzle to make any post request to the Traitify Api
 	 *
@@ -166,7 +179,7 @@ class Client {
 
 
 	/**
-	 * Makes a Delete request to traitify api 
+	 * Makes a Delete request to traitify api
 	 *
 	 * Uses Guzzle to make any delete request to the Traitify Api
 	 *
@@ -258,7 +271,7 @@ class Client {
 	 * Uses get to make a request to the Traitify Api
 	 *
 	 * @param string $assessmentId defines what assessment id you want to get personality types for
-	 * 
+	 *
 	 * @param string $options is optional and can be used to define which image pack you get back
 	 *
 	 * @return Array

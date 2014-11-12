@@ -1,11 +1,11 @@
-<?php 
+<?php
 use GuzzleHttp\Subscriber\Mock;
 use GuzzleHttp\Subscriber\History;
 class traitifyMocker{
 	public $client;
 
 	public function __construct(){
-		$this->client = new Traitify\Client(['host'=>'api.awesome.com', 'privateKey'=>'thisIsPrivateKey', 'version'=>'v1']);
+		$this->client = new Traitify\Client(['host'=>'api.awesome.com', 'secretKey'=>'thisIsSecretKey', 'version'=>'v1']);
 		return $this;
 	}
 	public function mock($requestName){
