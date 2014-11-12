@@ -6,7 +6,7 @@ To Install Use Composer:
 ### This library is best used with Traitify JS
 [http://traitify.github.io/traitify-js/](http://traitify.github.io/traitify-js/)
 
-### Private Key Required
+### Secret Key Required
 For instructions on obtaining a public key visit:
 [https://developer.traitify.com](https://developer.traitify.com)
 
@@ -16,7 +16,7 @@ For instructions on obtaining a public key visit:
 $client = new Traitify\Client([
   'host'=>'api-sandbox.traitify.com', /* Example Host */ 
   'version'=>'v1', /* Example Version */
-  'privateKey'=>'34aeraw23-3a43a32-234a34as42' /* Example Private Key */
+  'secretKey'=>'34aeraw23-3a43a32-234a34as42' /* Example Secret Key */
 ]);
 $client->createAssessment("career-deck");
 ```
@@ -26,7 +26,7 @@ $client->createAssessment("career-deck");
 $client = new Traitify\Client([
   'host'=>'api-sandbox.traitify.com', /* Example Host */ 
   'version'=>'v1', /* Example Version */
-  'privateKey'=>'34aeraw23-3a43a32-234a34as42' /* Example Private Key */
+  'secretKey'=>'34aeraw23-3a43a32-234a34as42' /* Example Secret Key */
 ]);
 $client->getSlides('a45rasw3-45s3a32-234aas45'); /* Example Assessment Id */
 ```
@@ -36,7 +36,7 @@ $client->getSlides('a45rasw3-45s3a32-234aas45'); /* Example Assessment Id */
 $client = new Traitify\Client([
   'host'=>'api-sandbox.traitify.com', /* Example Host */ 
   'version'=>'v1', /* Example Version */
-  'privateKey'=>'34aeraw23-3a43a32-234a34as42' /* Example Private Key */
+  'secretKey'=>'34aeraw23-3a43a32-234a34as42' /* Example Secret Key */
 ]);
 $client->getDecks();
 ```
@@ -46,7 +46,7 @@ $client->getDecks();
 $client = new Traitify\Client([
   'host'=>'api-sandbox.traitify.com', /* Example Host */ 
   'version'=>'v1', /* Example Version */
-  'privateKey'=>'34aeraw23-3a43a32-234a34as42' /* Example Private Key */
+  'secretKey'=>'34aeraw23-3a43a32-234a34as42' /* Example Secret Key */
 ]);
 $client->getPersonalityTypes('a45rasw3-45s3a32-234aas45'); /* Example Assessment Id */
 ```
@@ -56,7 +56,7 @@ $client->getPersonalityTypes('a45rasw3-45s3a32-234aas45'); /* Example Assessment
 $client = new Traitify\Client([
   'host'=>'api-sandbox.traitify.com', /* Example Host */ 
   'version'=>'v1', /* Example Version */
-  'privateKey'=>'34aeraw23-3a43a32-234a34as42' /* Example Private Key */
+  'secretKey'=>'34aeraw23-3a43a32-234a34as42' /* Example Secret Key */
 ]);
 $client->getPersonalityTraits('a45rasw3-45s3a32-234aas45'); /* Example Assessment Id */
 ```

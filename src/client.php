@@ -49,7 +49,8 @@ class Client {
 	public function __construct(array $config = []){
 		$this->host = $config["host"];
 		$this->version = $config["version"];
-		$this->secretKey = $config["secretKey"] | $config["privateKey"];
+		$this->secretKey = $config["secretKey"] . $config["privateKey"];
+		$this->privateKey = $config["secretKey"] . $config["privateKey"];
 		$this->client = new GuzzleClient();
 
 		return $this;
@@ -90,6 +91,7 @@ class Client {
 	 */
 
 	public function setPrivateKey($key){
+		$this->privateKey = $key;
 		$this->secretKey = $key;
 	}
 	/**
@@ -103,6 +105,7 @@ class Client {
 	 */
 	public function setSecretKey($key){
 		$this->secretKey = $key;
+		$this->privateKey = $key;
 	}
 
 	/**

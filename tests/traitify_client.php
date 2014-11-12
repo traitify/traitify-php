@@ -18,10 +18,10 @@ class TraitifyClient extends specHelper{
     $this->assertEquals($client->host, "other");
 
     $this->assertEquals($client->privateKey, "thisIsSecretKey");
-    $client->setPrivateKey("otherSecretKey");
-    $this->assertEquals($client->privateKey, "otherSecretKey");
+    $client->setPrivateKey("thisIsPrivateKey");
+    $this->assertEquals($client->privateKey, "thisIsPrivateKey");
 
-    $this->assertEquals($client->secretKey, "thisIsSecretKey");
+    $this->assertEquals($client->secretKey, "thisIsPrivateKey");
     $client->setSecretKey("otherSecretKey");
     $this->assertEquals($client->secretKey, "otherSecretKey");
 
