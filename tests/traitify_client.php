@@ -11,19 +11,19 @@ class TraitifyClient extends specHelper{
   }
 
   public function testSetClientProperties(){
-    $client = new Traitify\Client(['host'=>'api.awesome.com', 'secretKey'=>'thisIsSecretKey', 'version'=>'v1']);
+    $client = new Traitify\Client(['host'=>'api.awesome.com', 'secretKey'=>'thisIsSecretKey', 'privateKey'=>'thisIsPrivateKey', 'version'=>'v1']);
 
     $this->assertEquals($client->host, "api.awesome.com");
     $client->setHost("other");
     $this->assertEquals($client->host, "other");
 
-    $this->assertEquals($client->privateKey, "thisIsSecretKey");
-    $client->setPrivateKey("thisIsPrivateKey");
     $this->assertEquals($client->privateKey, "thisIsPrivateKey");
+    $client->setPrivateKey("thisIsPrivateKeyNow");
+    $this->assertEquals($client->privateKey, "thisIsPrivateKeyNow");
 
-    $this->assertEquals($client->secretKey, "thisIsPrivateKey");
-    $client->setSecretKey("otherSecretKey");
-    $this->assertEquals($client->secretKey, "otherSecretKey");
+    $this->assertEquals($client->secretKey, "thisIsSecretKey");
+    $client->setSecretKey("thisIsSecretKeyNow");
+    $this->assertEquals($client->secretKey, "thisIsSecretKeyNow");
 
     $this->assertEquals($client->version, "v1");
     $client->setVersion("otherV1");
