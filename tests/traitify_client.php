@@ -11,15 +11,11 @@ class TraitifyClient extends specHelper{
   }
 
   public function testSetClientProperties(){
-    $client = new Traitify\Client(['host'=>'api.awesome.com', 'secretKey'=>'thisIsSecretKey', 'privateKey'=>'thisIsPrivateKey', 'version'=>'v1']);
+    $client = new Traitify\Client(['host'=>'api.awesome.com', 'secretKey'=>'thisIsSecretKey', 'version'=>'v1']);
 
     $this->assertEquals($client->host, "api.awesome.com");
     $client->setHost("other");
     $this->assertEquals($client->host, "other");
-
-    $this->assertEquals($client->privateKey, "thisIsPrivateKey");
-    $client->setPrivateKey("thisIsPrivateKeyNow");
-    $this->assertEquals($client->privateKey, "thisIsPrivateKeyNow");
 
     $this->assertEquals($client->secretKey, "thisIsSecretKey");
     $client->setSecretKey("thisIsSecretKeyNow");
@@ -128,5 +124,14 @@ class TraitifyClient extends specHelper{
     $personalityTraits = $traitify->client->getPersonalityTraits("assessmentId");
 
     $this->assertEquals($personalityTraits[0]->personality_trait->name, "Aggressive");
+  }
+  public function testGetCareerMatches(){
+    $traitify = $this->mockedClient();
+
+    $traitify->mock("getCareerMatches");
+
+    $careerMatches = $traitify->client->getCareerMatches("assessmentId");
+
+    $this->assertEquals($careerMatches[0]->career->title, "Ship and Boat Captains");
   }
 }

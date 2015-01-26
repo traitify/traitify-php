@@ -6,8 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    $vendorDir . '/herrera-io/json/src/lib/json_version.php',
     $vendorDir . '/guzzlehttp/streams/src/functions.php',
-    $vendorDir . '/herrera-io/phar-update/src/lib/constants.php',
     $vendorDir . '/guzzlehttp/guzzle/src/functions.php',
+    $vendorDir . '/herrera-io/phar-update/src/lib/constants.php',
+    $vendorDir . '/herrera-io/json/src/lib/json_version.php',
 );

@@ -34,12 +34,32 @@ class TraitifyClient extends specHelper{
 
   public function testGetPersonalityTraits(){
     $assessmentId = $this->playedAssessmentId();
-    echo("Assessment Id");
-    
+
     $response = $this->traitify()->getPersonalityTraits($assessmentId);
-    echo("Get Slides");
-    echo($this->history);
-    echo("End");
+  }
+
+  public function testGetCareerMatches(){
+    $assessmentId = $this->playedAssessmentId();
+
+    $response = $this->traitify()->getCareerMatches($assessmentId);
+
+    $this->assertNotEquals($response[0]->career->title, "");
+  }
+
+  public function testGetOneCareerMatch(){
+    $assessmentId = $this->playedAssessmentId();
+
+    $response = $this->traitify()->getCareerMatches($assessmentId, 1);
+
+    $this->assertEquals(count($response), 1);
+  }
+
+  public function testGetOneCareerMatchExperienceLevelFive(){
+    $assessmentId = $this->playedAssessmentId();
+
+    $response = $this->traitify()->getCareerMatches($assessmentId, 1, [5]);
+
+    $this->assertEquals($response[0]->career->experience_level->id, 5);
   }
 
   public function slideId(){
@@ -59,7 +79,7 @@ class TraitifyClient extends specHelper{
 
   public function traitify(){
     $this->history = new History();
-    $this->traitifyClient = new Traitify\Client(['host'=>'api-sandbox.traitify.com', 'privateKey'=>'exampleKey', 'version'=>'v1']);
+    $this->traitifyClient = new Traitify\Client(['host'=>'api-sandbox.traitify.com', 'secretKey'=>'secret key goes here', 'version'=>'v1']);
     $this->traitifyClient->client->getEmitter()->attach($this->history);
     return $this->traitifyClient;
   }
