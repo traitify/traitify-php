@@ -18,6 +18,12 @@
       "email":    "carsonnwright@gmail.com",
       "homepage": "https://www.traitify.com",
       "role":     "Developer"
+    },
+    {
+      "name":     "Eric Fleming",
+      "email":    "efleming@gmail.com",
+      "homepage": "https://www.traitify.com",
+      "role":     "Developer"
     }
   ],
   "autoload": {
