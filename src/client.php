@@ -29,6 +29,10 @@ class Client {
   */
 	public $version;
 
+    /**
+     * This is a user agent that gets passed along on all requests.
+     */
+    const USER_AGENT = 'traitify-client/1.0.0.x-dev';
 
 	/**
      * Clients accept an array of constructor parameters.
@@ -52,10 +56,11 @@ class Client {
 		if(isset($config["secretKey"])){
 			$this->secretKey = $config["secretKey"];
 		}elseif (isset($config["privateKey"])){
-			// depracted, but keeping this here for backwards compatability
+			// deprecated, but keeping this here for backwards compatibility
 			$this->secretKey = $config["privateKey"];
 		}
 		$this->client = new GuzzleClient();
+        $this->client->setUserAgent($this::USER_AGENT . '/' . PHP_VERSION);
 
 		return $this;
 	}
