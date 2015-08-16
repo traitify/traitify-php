@@ -1,7 +1,41 @@
 Traitify Api PHP Library
 ===============
-To Install Use Composer:
-[https://getcomposer.org/doc/00-intro.md#globally](https://getcomposer.org/doc/00-intro.md#globally)
+
+This is a helper library for the Traitify API - https://developer.traitify.com/
+
+### Installing via Composer
+
+The recommended way to install the Traitify library is through [Composer](http://getcomposer.org).
+
+```bash
+# Install Composer
+curl -sS https://getcomposer.org/installer | php
+
+# Add the library as a dependency
+php composer.phar require traitify/client dev-master
+```
+
+or alternatively, you can add it directly to your `composer.json` file.
+
+```json
+{
+    "require": {
+        "traitify/client": "dev-master"
+    }
+}
+```
+
+Then install via Composer:
+
+```bash
+composer install
+```
+
+Finally, require Composer's autoloader in your PHP script:
+
+```php
+require __DIR__.'/vendor/autoload.php';
+```
 
 ### This library is best used with Traitify JS
 [http://traitify.github.io/traitify-js/](http://traitify.github.io/traitify-js/)
